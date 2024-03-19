@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\InvoiceController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -33,3 +34,7 @@ Route::post('login',[App\Http\Controllers\Api\LoginController::class ,'login']);
 Route::post('code',[App\Http\Controllers\Api\LoginController::class ,'code']);
 Route::get('ItemsGroupWithSubs/{level}',[App\Http\Controllers\Api\Maincontroller::class ,'ItemsGroupWithSubs']);
 Route::get('ItemsByCategory/{category}',[App\Http\Controllers\Api\Maincontroller::class ,'FItemDByGroup']);
+
+#####################################
+
+Route::get('invoice', [InvoiceController::class, 'invoiceIndex']);
