@@ -11,10 +11,10 @@ class InvoiceController extends Controller
 {
     public function invoiceIndex(){
         try{
-            $invoice = DB::table('dbo_invoicesanded')
-            ->join('dbo_store', 'dbo_invoicesanded.Id', 'dbo_store.Store_Code')
+            $invoice = DB::table('invoice_sanded')
+            ->join('dbo_store', 'invoice_sanded.Id', 'dbo_store.Store_Code')
             ->select('dbo_invoicesanded.InvoiceId',
-            'dbo_invoicesanded.CreationDate',
+            'invoice_sanded.CreationDate',
             'dbo_store.Store_Name')
             ->where('dbo_store.Isdeleted', '=', 0)
             ->get();
